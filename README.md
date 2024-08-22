@@ -1,5 +1,5 @@
-<H3>ENTER YOUR NAME</H3>
-<H3>ENTER YOUR REGISTER NO.</H3>
+<H3>NAME: AKSHAYAA M</H3>
+<H3>REGISTER NO: 212222230009</H3>
 <H3>EX. NO.1</H3>
 <H3>DATE</H3>
 <H1 ALIGN =CENTER> Introduction to Kaggle and Data preprocessing</H1>
@@ -37,12 +37,68 @@ STEP 5:Normalizing the data<BR>
 STEP 6:Splitting the data into test and train<BR>
 
 ##  PROGRAM:
-TYPE YOUR CODE HERE
+```python
+#import libraries
+from google.colab import files
+import pandas as pd
+import io
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import train_test_split
 
+#Read the dataset from drive
+df=pd.read_csv("/content/Churn_Modelling.csv")
+df
 
+#split the dataset
+X=df.iloc[:,:-1].values
+print(X)
+y=df.iloc[:,-1].values
+print(y)
+
+#Finding Missing values
+print(df.isnull().sum())
+
+#Check for Duplicates
+df.duplicated()
+
+print(df['Exited'].describe())
+df.info()
+
+df=df.drop(['Surname','Geography','Gender'],axis=1)
+df
+
+scaler=MinMaxScaler()
+df1=pd.DataFrame(scaler.fit_transform(df))
+print(df1)
+
+X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.2)
+print(X_train)
+print(len(X_train))
+print(X_test)
+print(len(X_test))
+```
 ## OUTPUT:
-SHOW YOUR OUTPUT HERE
-
+### Read the datase
+![image](1.png)
+### Split the dataset
+![image](2.png)
+### Finding Missing values
+![image](3.png)
+### Checking Duplicates
+![image](4.png)
+### Describe a column
+![image](5.png)
+### Info
+![image](6.png)
+### Dropping columns
+![image](7.png)
+### Normalizing the data
+![image](8.png)
+### X_train
+![image](9.png)
+### X_test
+![image](10.png)
 
 ## RESULT:
 Thus, Implementation of Data Preprocessing is done in python  using a data set downloaded from Kaggle.
