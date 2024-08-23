@@ -51,9 +51,9 @@ df=pd.read_csv("/content/Churn_Modelling.csv")
 df
 
 #split the dataset
-X=df.iloc[:,:-1].values
+X=df1.iloc[:,:-1].values
 print(X)
-y=df.iloc[:,-1].values
+y=df1.iloc[:,-1].values
 print(y)
 
 #Finding Missing values
@@ -96,9 +96,10 @@ print(len(X_test))
 ### Normalizing the data
 ![image](8.png)
 ### X_train
-![image](9.png)
+![Screenshot 2024-08-23 093907](https://github.com/user-attachments/assets/536de344-6a5f-45f9-88cc-bb13ecab057c)
+
 ### X_test
-![image](10.png)
+![Screenshot 2024-08-23 093913](https://github.com/user-attachments/assets/9cc63c61-beb5-4616-a8c7-3221f588175a)
 
 ## RESULT:
 Thus, Implementation of Data Preprocessing is done in python  using a data set downloaded from Kaggle.
